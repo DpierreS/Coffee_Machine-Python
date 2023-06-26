@@ -92,10 +92,6 @@ while machine_on:
         print(make_drink())
         # TODO: 5: Process the coins
         print(insert_money())
-
-
-
-
     else:
         print("Please enter a valid selection")
 
