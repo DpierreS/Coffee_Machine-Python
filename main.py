@@ -44,7 +44,7 @@ def make_drink():
     for quantity in resources:
         if resources[quantity] < MENU[menu_choice]['ingredients'][quantity]:
             return f"Sorry there is not enough {quantity}"
-    return "Please insert coins."
+    return f"Please insert ${MENU[menu_choice]['cost']:.2f}:"
 
 
 def insert_money():
@@ -59,9 +59,10 @@ def insert_money():
     if money_added >= MENU[menu_choice]['cost']:
         change = money_added - MENU[menu_choice]['cost']
         money += MENU[menu_choice]['cost']
-        return f"Here is ${change:.2f} in change.\nHere is your {menu_choice} ☕. Enjoy!"
         # TODO: 7: Deduct resources and add money to profits
         deduct_items()
+        return f"Here is ${change:.2f} in change.\nHere is your {menu_choice} ☕. Enjoy!"
+        
     else:
         return "Sorry that's not enough money. Money refunded."
 
